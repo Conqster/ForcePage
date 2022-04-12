@@ -55,6 +55,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
     <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Collidable.cs" />
+    <Compile Include="Assets\Scripts\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\Collectible.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
+    <Compile Include="Assets\Scripts\GameBehaviour.cs" />
+    <Compile Include="Assets\Scripts\FloatingText.cs" />
+    <Compile Include="Assets\Scripts\MeleeWeapon.cs" />
+    <Compile Include="Assets\Scripts\DealDamage.cs" />
+    <Compile Include="Assets\Scripts\Damagable.cs" />
+    <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

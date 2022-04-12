@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Damagable
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - Character
   - Wall
-  - 
+  - Damagable
   - 
   - 
   - 
@@ -41,6 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 2525778433
+    locked: 0
   - name: Characters
     uniqueID: 3736399707
+    locked: 0
+  - name: Collectible
+    uniqueID: 2975925809
+    locked: 0
+  - name: MeleeWeapon
+    uniqueID: 3044025457
+    locked: 0
+  - name: Damagable
+    uniqueID: 4134146563
     locked: 0

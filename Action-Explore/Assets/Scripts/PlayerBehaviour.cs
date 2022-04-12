@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour
+public class PlayerBehaviour : Damagable
 {
     BoxCollider2D boxCol;
     Vector3 changeInPosition;
