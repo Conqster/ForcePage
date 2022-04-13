@@ -13,6 +13,7 @@ public class MeleeWeapon : Collidable
 
 
     //Swing
+    private Animator anim;
     float cooldown = 0.5f;
     float lastSwing;
 
@@ -20,15 +21,16 @@ public class MeleeWeapon : Collidable
     {
         base.Start();
         sp = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     protected override void Update()
     {
         base.Update();
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(Time.deltaTime - lastSwing > cooldown)
+            //print("Action !!!!!!!!");
+            if(Time.time - lastSwing > cooldown)
             {
                 lastSwing = Time.time;
                 Swing();
@@ -41,7 +43,7 @@ public class MeleeWeapon : Collidable
     {
         if(col.tag == "Damagable")
         {
-            Debug.Log(col.name);
+            //Debug.Log(col.name);
 
             DealDamage dmg = new DealDamage();
             dmg.damage = damageRate;
@@ -55,6 +57,7 @@ public class MeleeWeapon : Collidable
     }
     void Swing()
     {
-        Debug.Log("Swing");
+        //Debug.Log("Swing");
+        anim.SetTrigger("Swing");
     }
 }

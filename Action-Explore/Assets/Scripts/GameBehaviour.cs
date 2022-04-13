@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBehaviour : MonoBehaviour
 {
-    static GameBehaviour instance;
+    public static GameBehaviour instance;
 
     //Resource
     public List<Sprite> playerSprites;
@@ -15,8 +15,9 @@ public class GameBehaviour : MonoBehaviour
     //Ref
     [SerializeField] PlayerBehaviour player;
 
-    [SerializeField] int pesos;
-    [SerializeField] int exp;
+    public int pesos;
+    public int exp;
+    public int power;
 
     void Awake()
     {

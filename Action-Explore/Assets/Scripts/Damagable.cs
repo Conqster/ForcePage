@@ -17,10 +17,10 @@ public class Damagable : MonoBehaviour
     //Push
     protected Vector3 pushDirection;
 
-    protected void Start()
-    {
-        sp = GetComponent<SpriteRenderer>();
-    }
+    //protected void Start()
+    //{
+    //    sp = GetComponent<SpriteRenderer>();
+    //}
 
     //All Damagable objects can reiveDamage and get destroyed
     protected virtual void ReceiveDamage(DealDamage dmg)
@@ -49,7 +49,8 @@ public class Damagable : MonoBehaviour
 
     protected virtual void HitColour()
     {
-        if(sp.color == Color.white)
+        sp = GetComponent<SpriteRenderer>();
+        if (sp.color == Color.white)
         {
             sp.color = Color.red;
         }
