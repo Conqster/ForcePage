@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace ForcePage
 {
+    enum Weapons { Gun, Sword};
     public class Weapon : MonoBehaviour
     {
         [SerializeField] GameObject Bullet; // prefab for bullet 
@@ -23,6 +24,8 @@ namespace ForcePage
         [SerializeField] bool allowShot, attack;
         //reload time
 
+        Weapons currentWeapon;
+        
 
         // its going to be good to have a switch case to either shoot or swing melee weapon 
         protected void Start()
@@ -39,16 +42,47 @@ namespace ForcePage
         {
             //projectile change with time
             GetInputs();
-            ArmSafety();
+            CurrentWeapon();
+            Attack();
+            //print(currentWeapon);
             //Debug.LogFormat("bullet left - {0}, magazine size - {1}", bulletLeft, magazineSize);
         }
 
-
+        void CurrentWeapon()
+        {
+            if (Input.GetKey(KeyCode.Z))
+            {
+                currentWeapon = Weapons.Gun;
+            }
+            else if (Input.GetKey(KeyCode.X))
+            {
+                currentWeapon = Weapons.Sword;
+            }
+        }
         void GetInputs()
         {
             attack = Input.GetKey(KeyCode.Space);
         }
 
+        void Attack()
+        {
+            if(currentWeapon == Weapons.Sword)
+            {
+                Melee();
+            }
+            else
+            {
+                ArmSafety();
+            }
+        }
+
+        void Melee()
+        {
+            if(attack)
+            {
+                 print("trying to swing my sword");
+            }
+        }
         void ArmSafety()
         {
             if (allowShot && attack && bulletLeft > 0)
@@ -62,7 +96,6 @@ namespace ForcePage
 
             GameObject newBullet = Instantiate(Bullet, bulletPoint.position, Quaternion.identity);
 
-            //newBullet.transform.Translate (bulletPoint.transform.right * Time.deltaTime);
 
             Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
             if(attackerTran.localScale.x == -1)

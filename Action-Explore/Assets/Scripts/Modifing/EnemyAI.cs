@@ -50,7 +50,7 @@ namespace ForcePage
         protected override void Update()
         {
             base.Update();
-            print(aiState);
+            //print(aiState);
             if(_player != null)
             {
                 CheckPlayerRangeAndSetAIState();
