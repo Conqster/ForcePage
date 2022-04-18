@@ -220,23 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5578b6da7beb43144afd7743184ec99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  damageRate: 1
-  pushForce: 4
-  weaponLevel: 0
 --- !u!61 &19880352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -300,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &171337794
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -405,9 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057851c374b85df4b842da82acd519a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
-  pushRecoverySpeed: 0.1
 --- !u!1 &313607022
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +405,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &313607023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,23 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57bfb317127de54facdf9f02c4b4676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  sceneNames:
-  - Level01
-  - Level02
 --- !u!61 &313607024
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -513,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &519420029
 AudioListener:
   m_ObjectHideFlags: 0
@@ -534,9 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d886d9308c4ba43ae8cf027c4fd578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 171337796}
-  frameX: 0.3
-  frameY: 0.15
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -610,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1029712152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,14 +583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0201380d0ff44741bc510e5e394084a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSprites: []
-  weaponSprites: []
-  weaponPrices: 
-  xpTable: 
-  player: {fileID: 0}
-  pesos: 0
-  exp: 0
-  power: 0
 --- !u!4 &1029712153
 Transform:
   m_ObjectHideFlags: 0
@@ -767,22 +719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f3c8c57a2d7c5478c20669a19a2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  damageRate: 2
-  pushForce: 5
 --- !u!1 &1202120516
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1202120517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -906,26 +842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c228d6836b2194396734b8ad74ed8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 3
-  maxHitpoint: 3
-  pushRecoverySpeed: 0.2
-  xpValue: 2
-  chaseRange: 0.6
-  chaseLenght: 2
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!1 &1204503331
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1204503332
 Grid:
   m_ObjectHideFlags: 0
@@ -12287,7 +12203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1746936281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12300,22 +12216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459fecd11a43bfc4e862d60b516a12dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  powerUp: 10
-  destroyTime: 1
 --- !u!61 &1746936282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12425,7 +12325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2083337174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12529,23 +12429,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c228d6836b2194396734b8ad74ed8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
-  pushRecoverySpeed: 0.2
-  xpValue: 2
-  chaseRange: 1
-  chaseLenght: 5
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0

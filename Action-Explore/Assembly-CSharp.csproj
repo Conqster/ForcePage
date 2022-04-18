@@ -53,20 +53,26 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\FloatingText.cs" />
-    <Compile Include="Assets\Scripts\Collectible.cs" />
-    <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Damagable.cs" />
-    <Compile Include="Assets\Scripts\DealDamage.cs" />
-    <Compile Include="Assets\Scripts\MeleeWeapon.cs" />
-    <Compile Include="Assets\Scripts\GameBehaviour.cs" />
-    <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Teleporter.cs" />
-    <Compile Include="Assets\Scripts\PowerUp.cs" />
-    <Compile Include="Assets\Scripts\Collidable.cs" />
-    <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Movement.cs" />
-    <Compile Include="Assets\Scripts\EnemyMeleeAttack.cs" />
+    <Compile Include="Assets\Scripts\Modifing\TestingCollision.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Modifing\HealthPickUp.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Manager.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Bottles.cs" />
+    <Compile Include="Assets\Scripts\Modifing\TestPlayer.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Modifing\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Damagable.cs" />
+    <Compile Include="Assets\Scripts\Modifing\DealDamage.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Collidable.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Movement.cs" />
+    <Compile Include="Assets\Scripts\Modifing\Enemy1.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Modifing\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Modifing\BulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Modifing\AmmoPickUp.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyWeapon.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

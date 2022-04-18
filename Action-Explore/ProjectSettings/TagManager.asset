@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Damagable
+  - Obstacle
+  - Waypoint
+  - Projectiles
   layers:
   - Default
   - TransparentFX
@@ -56,4 +59,7 @@ TagManager:
     locked: 0
   - name: Damagable
     uniqueID: 4134146563
+    locked: 0
+  - name: Walls
+    uniqueID: 3360513011
     locked: 0
