@@ -63,3 +63,9 @@ TagManager:
   - name: Walls
     uniqueID: 3360513011
     locked: 0
+  - name: BattleTiles
+    uniqueID: 3243804431
+    locked: 0
+  - name: BombTest
+    uniqueID: 2225128873
+    locked: 0

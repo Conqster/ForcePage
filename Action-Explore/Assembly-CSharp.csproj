@@ -57,11 +57,14 @@
     <Compile Include="Assets\Scripts\Modifing\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Modifing\HealthPickUp.cs" />
     <Compile Include="Assets\Scripts\Modifing\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyWeapon.cs" />
     <Compile Include="Assets\Scripts\Modifing\Manager.cs" />
     <Compile Include="Assets\Scripts\Modifing\Bottles.cs" />
     <Compile Include="Assets\Scripts\Modifing\TestPlayer.cs" />
     <Compile Include="Assets\Scripts\Modifing\Weapon.cs" />
     <Compile Include="Assets\Scripts\Modifing\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Modifing\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\Modifing\BattleTileManager.cs" />
     <Compile Include="Assets\Scripts\Modifing\Damagable.cs" />
     <Compile Include="Assets\Scripts\Modifing\DealDamage.cs" />
     <Compile Include="Assets\Scripts\Modifing\Collidable.cs" />
@@ -71,8 +74,9 @@
     <Compile Include="Assets\Scripts\Modifing\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Modifing\BulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Modifing\AmmoPickUp.cs" />
-    <Compile Include="Assets\Scripts\Modifing\EnemyWeapon.cs" />
-    <Compile Include="Assets\Scripts\Modifing\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\Modifing\MouseInput.cs" />
+    <Compile Include="Assets\Scripts\Modifing\ClickableTiles.cs" />
+    <Compile Include="Assets\Scripts\MoveController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
