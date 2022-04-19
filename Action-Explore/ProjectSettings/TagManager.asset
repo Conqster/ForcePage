@@ -57,15 +57,21 @@ TagManager:
   - name: MeleeWeapon
     uniqueID: 3044025457
     locked: 0
-  - name: Damagable
-    uniqueID: 4134146563
+  - name: Props
+    uniqueID: 4221940159
     locked: 0
   - name: Walls
     uniqueID: 3360513011
+    locked: 0
+  - name: Damagable
+    uniqueID: 4134146563
     locked: 0
   - name: BattleTiles
     uniqueID: 3243804431
     locked: 0
   - name: BombTest
     uniqueID: 2225128873
+    locked: 0
+  - name: Props 2
+    uniqueID: 2687305091
     locked: 0

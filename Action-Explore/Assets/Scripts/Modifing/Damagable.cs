@@ -44,7 +44,7 @@ namespace ForcePage
 
         protected virtual void Death()
         {
-            print("i'm out!!!!");
+            //print("i'm out!!!!");
         }
     }
 

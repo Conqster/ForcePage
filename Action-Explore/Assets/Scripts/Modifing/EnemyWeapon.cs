@@ -22,7 +22,7 @@ namespace ForcePage
             if (Bullet != null)
             {
                 GameObject newBullet = Instantiate(Bullet, bulletPoint.position, Quaternion.identity);
-                print("you are out");
+                //print("you are out");
                 Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
                 if (attackerTran.localScale.x == -1)
                 {
