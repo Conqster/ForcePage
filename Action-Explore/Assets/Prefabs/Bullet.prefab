@@ -158,5 +158,5 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  attacher: {fileID: 0}
+  damage: 10.5
+  reduceInDamage: 5
