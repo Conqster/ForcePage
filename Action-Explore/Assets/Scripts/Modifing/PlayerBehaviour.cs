@@ -6,8 +6,19 @@ namespace ForcePage
 {
     public class PlayerBehaviour : Movement
     {
+        PlayerInventory _player;
+
+
+        
+        protected override void Start()
+        {
+            base.Start();
+            _player = GetComponent<PlayerInventory>();
+        }
         protected override void Update()
         {
+            health = _player.hp;
+            //health = _player.hp;
             PlayerInput();
             base.Update();
         }
@@ -20,6 +31,11 @@ namespace ForcePage
             MovementInput(new Vector2(xDirection, yDirection));
         }
 
+        public void UpdateHealth(float valueToAdd)
+        {
+            print("tryingg to nupdate");
+            //health += valueToAdd;
+        }
 
     }
 

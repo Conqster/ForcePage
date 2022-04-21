@@ -7,13 +7,22 @@ namespace ForcePage
 {
     public class HealthPickUp : Collectable
     {
-        [SerializeField] int healthValue = 1;
+        [SerializeField] float healthPickValue = 50;
+        PlayerInventory _playerInventory;
 
-
+        
         protected override void GiveItem()
         {
-            _playerInvetory.UpdateHealth(healthValue);
+            _playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+            //print("okay");
+            // _playerInventory.UpdateHealth(healthPickValue);
+            //_player.hp += healthPickValue;
+            //_player.UpdateHealth(healthPickValue);
+            _playerInventory.UpdateHealth(healthPickValue);
+            //_player.UpdateHealth(healthPickValue);
+            //Manager.instance.hp += healthPickValue;
         }
+
     }
 
 }

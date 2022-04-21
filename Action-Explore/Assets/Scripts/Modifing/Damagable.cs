@@ -7,14 +7,28 @@ namespace ForcePage
 {
     public class Damagable : MonoBehaviour
     {
-        [SerializeField] int health;
+        //public int health;
+        //[Range(0f, 100f)]
+        //[SerializeField] float health;
 
         [SerializeField] float hitColourTime = 0.75f;
         SpriteRenderer sp;
 
+        //public float hp
+        //{
+        //    get
+        //    {
+        //        return health;
+        //    }
+        //    set
+        //    {
+        //        health = value;
+        //    }
+        //}
+
+        [SerializeField] protected float health;
 
         
-
 
         protected virtual void RecieveDamage(DealDamage dmg)
         {
@@ -46,6 +60,8 @@ namespace ForcePage
         {
             //print("i'm out!!!!");
         }
+
+        
     }
 
 }

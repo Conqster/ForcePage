@@ -41,8 +41,8 @@ namespace ForcePage
         private void Update()
         {
             //projectile change with time
-            GetInputs();
             CurrentWeapon();
+            GetInputs();
             Attack();
             //print(currentWeapon);
             //Debug.LogFormat("bullet left - {0}, magazine size - {1}", bulletLeft, magazineSize);
@@ -72,7 +72,7 @@ namespace ForcePage
             }
             else
             {
-                ArmSafety();
+                ArmSafetyOff();
             }
         }
 
@@ -83,7 +83,7 @@ namespace ForcePage
                  print("trying to swing my sword");
             }
         }
-        void ArmSafety()
+        void ArmSafetyOff()
         {
             if (allowShot && attack && bulletLeft > 0)
             {

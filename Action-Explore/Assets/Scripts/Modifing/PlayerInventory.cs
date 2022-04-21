@@ -9,13 +9,24 @@ namespace ForcePage
         //using this to store 
         // health 
         // ammos
-        [SerializeField] int health;
+        [Range(0f, 100f)]
+        [SerializeField] float health = 90;
+
+        
+        public float hp
+        {
+            get
+            {
+                return health;
+            }
+        }
         Weapon _weapon;
         public void Start()
         {
             _weapon = GetComponent<Weapon>();
         }
-        public void UpdateHealth(int valueToAdd)
+
+        public void UpdateHealth(float valueToAdd)
         {
             health += valueToAdd;
         }

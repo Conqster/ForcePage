@@ -7,12 +7,13 @@ namespace ForcePage
 {
     public class AmmoPickUp : Collectable
     {
-        [SerializeField] int ammoValue = 1;
+        [SerializeField] int ammoPickValue = 1;
 
 
         protected override void GiveItem()
         {
-            _playerInvetory.UpdateAmmo(ammoValue);
+            //_playerInvetory.UpdateAmmo(ammoValue);
+            //_player.hp += healthPickValue;
         }
     }
 
