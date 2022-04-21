@@ -7,26 +7,25 @@ namespace ForcePage
 {
     public class Collectable : Collidable
     {
-        //protected PlayerBehaviour _player;
+        protected PlayerInventory _playerInventory;
 
 
-        
+        protected override void Start()
+        {
+            base.Start();
+            _playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+        }
+
+
+
         protected override void OnCollide(Collider2D collision)
         {
-            //print(collision);
-            //_player = GetComponent<PlayerBehaviour>();
+            
             if (collision.name == "Player")
             {
                 DestroyOnGive();
                 GiveItem();
             }
-            //_playerInvetory = victim.gameObject.GetComponent<PlayerInventory>();
-            ////print(victim);
-            //    if(_playerInvetory != null)
-            //    {
-            //        GiveItem();
-            //        DestroyOnGive();
-            //    }
            
         }
         

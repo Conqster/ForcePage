@@ -7,6 +7,7 @@ namespace ForcePage
     public class PlayerBehaviour : Movement
     {
         PlayerInventory _player;
+        UIManager _UiSys;
 
 
         
@@ -14,11 +15,11 @@ namespace ForcePage
         {
             base.Start();
             _player = GetComponent<PlayerInventory>();
+            _UiSys = GameObject.Find("UI System").GetComponent<UIManager>();
         }
         protected override void Update()
         {
             health = _player.hp;
-            //health = _player.hp;
             PlayerInput();
             base.Update();
         }
@@ -31,10 +32,22 @@ namespace ForcePage
             MovementInput(new Vector2(xDirection, yDirection));
         }
 
-        public void UpdateHealth(float valueToAdd)
+        protected override void RecieveDamage(DealDamage dmg)
         {
-            print("tryingg to nupdate");
-            //health += valueToAdd;
+            _player.UpdateHealth(-dmg.damage);
+            print(health);
+            ReceiveHitColour();
+            Invoke("ReceiveHitColour", hitColourTime);
+
+            if (health < 0)
+            {
+                Death();
+            }
+        }
+
+        protected override void Death()
+        {
+            _UiSys.GameOver();
         }
 
     }

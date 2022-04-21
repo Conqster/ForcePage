@@ -11,13 +11,8 @@ namespace ForcePage
         [SerializeField] GameObject Bullet; // prefab for bullet 
         [SerializeField] Transform bulletPoint, attackerTran;
 
-        PlayerInventory _playerInventory;
-        Vector2 projetilePos;
-        float projectileSpeed = 5 , projectileDeltaSpeed;
-        //bullet left in the gun 
-        [SerializeField] int bulletLeft;
-        //magazine size the maximum amount of bullet in a gun 
-        int magazineSize = 10;
+        float projectileSpeed = 5;
+        [SerializeField] int bulletLeft, magazineSize;
         //time to be able to shot the next shot
         [SerializeField] float timeBetweenShooting = 1;
         //bool to allow shot 
@@ -25,29 +20,33 @@ namespace ForcePage
         //reload time
 
         Weapons currentWeapon;
+        PlayerInventory _playerInventory;
         
 
         // its going to be good to have a switch case to either shoot or swing melee weapon 
         protected void Start()
         {
-            //bulletLeft = magazineSize;
-            bulletLeft = magazineSize;
             //ResetShot();
             allowShot = true;
             attackerTran = GetComponent<Transform>();
+            _playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+            AmmoOnEquip();
         }
 
         
         private void Update()
         {
-            //projectile change with time
+            bulletLeft = _playerInventory.bulletLeft;
             CurrentWeapon();
             GetInputs();
             Attack();
-            //print(currentWeapon);
-            //Debug.LogFormat("bullet left - {0}, magazine size - {1}", bulletLeft, magazineSize);
         }
 
+        void AmmoOnEquip()
+        {
+            magazineSize = _playerInventory.magSize; // gets the gun ammmo size 
+            _playerInventory.UpdateAmmo(magazineSize); // sets the bulletLeft to gun ammo size
+        }
         void CurrentWeapon()
         {
             if (Input.GetKey(KeyCode.Z))
@@ -107,7 +106,8 @@ namespace ForcePage
                 bulletRb.velocity = bulletPoint.transform.right * projectileSpeed;
             }
 
-            bulletLeft --;
+            //bulletLeft --;
+            _playerInventory.UpdateAmmo(-1);
             Invoke("ResetShot", timeBetweenShooting);
         }
 
@@ -118,18 +118,7 @@ namespace ForcePage
              allowShot = true;
         }
 
-        public void AddAmmo(int ammo)
-        {
-            int ammoNeed = magazineSize - bulletLeft;
-              if(ammoNeed > ammo)
-                 {
-                   bulletLeft += ammo;
-                 }
-              else if (ammoNeed < ammo)
-                 {
-                   bulletLeft += ammoNeed;
-                 }
-        }
+     
     }
 
 }

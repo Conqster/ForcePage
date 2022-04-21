@@ -7,7 +7,6 @@ namespace ForcePage
     public class BulletBehaviour : Collidable
     {
         [SerializeField] int damage;
-        [SerializeField] GameObject attacher;
 
         
 

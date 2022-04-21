@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77545008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.303, y: -0.582, z: 0}
+  m_LocalPosition: {x: 5.05, y: -0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 776676911}
@@ -20529,7 +20529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &474730549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21890,7 +21890,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  healthPickValue: 5
+  healthPickValue: 50
 --- !u!212 &720380669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23077,7 +23077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &946280891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23091,6 +23091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombTestControl: {fileID: 474730551}
+  currentTile: {fileID: 0}
+  moveTarget: {x: 0, y: 0, z: 0}
 --- !u!4 &946280892
 Transform:
   m_ObjectHideFlags: 0
@@ -23121,7 +23123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &951138285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23458,7 +23460,7 @@ GameObject:
   - component: {fileID: 1051714441}
   - component: {fileID: 1051714445}
   m_Layer: 5
-  m_Name: UI
+  m_Name: UI System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55158,6 +55160,49 @@ Transform:
   m_Father: {fileID: 1912875473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1207940789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207940791}
+  - component: {fileID: 1207940790}
+  m_Layer: 0
+  m_Name: TestingDamageDealt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1207940790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207940789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf6d9959d5bb5a45bd05005df269a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1207940791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207940789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.610377, y: -3.657154, z: 1.8209257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1678205136}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216257454
 GameObject:
   m_ObjectHideFlags: 0
@@ -56529,7 +56574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1495417257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56545,6 +56590,18 @@ MonoBehaviour:
   battleTiles:
   - {fileID: 7122303018752529008, guid: a9a95e1dfd065c940893011f635c3a0f, type: 3}
   - {fileID: 8932874986171942088, guid: fcbff39308c2056409afee39c0f07d07, type: 3}
+  battleFieldSize: 6
+  colA:
+    r: 0.7
+    g: 0.2
+    b: 0.3
+    a: 1
+  colB:
+    r: 0.1
+    g: 0.3
+    b: 0.7
+    a: 1
+  position: {x: 0, y: 0, z: 0}
 --- !u!4 &1495417258
 Transform:
   m_ObjectHideFlags: 0
@@ -66927,7 +66984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1558332659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67141,6 +67198,7 @@ Transform:
   - {fileID: 946280892}
   - {fileID: 951138286}
   - {fileID: 1558332660}
+  - {fileID: 1207940791}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67852,6 +67910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 57
+  magazineSize: 12
 --- !u!114 &1912875477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67868,6 +67927,7 @@ MonoBehaviour:
   bulletPoint: {fileID: 1201206176}
   attackerTran: {fileID: 0}
   bulletLeft: 0
+  magazineSize: 0
   timeBetweenShooting: 1
   allowShot: 0
   attack: 0
