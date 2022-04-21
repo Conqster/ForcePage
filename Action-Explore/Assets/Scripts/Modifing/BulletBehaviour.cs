@@ -6,7 +6,8 @@ namespace ForcePage
 {
     public class BulletBehaviour : Collidable
     {
-        [SerializeField] int damage;
+        [Range(5f, 50f)]
+        [SerializeField] float damage = 40f;
 
         
 

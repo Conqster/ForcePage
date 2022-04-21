@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace ForcePage
 {
-    public class EnemyBehaviour : Movement
+    public class EnemyBehaviour_02 : Movement
     {
-        [SerializeField] float chaseRange = 1;
-        [SerializeField] float chaseLenght = 5;
+        [Range(0f,10f)]
+        [SerializeField] float chaseRange = 1, chaseLenght = 5;
 
         bool chasing, collidingWithPlayer;
         Transform _playerTransform;

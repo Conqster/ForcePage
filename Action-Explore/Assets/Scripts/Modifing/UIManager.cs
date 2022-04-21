@@ -17,10 +17,14 @@ namespace ForcePage
         public GameState currentState;
         public GameObject mainMenuPanel, pauseMenuPanel, gameOverPanel, inGameUI;
 
-        public Image healthBar;
-        float currentHealth, maxHealth = 100f;
+        public Image healthBar, ammoBar;
+        float currentHealth, maxHealth = 100f, currentAmmo, maxAmmo;
 
         PlayerInventory _playerInventory;
+        Weapon _playerWeapon;
+        public Image gunBar, swordBar;
+        float onGun, onSword, maxWeaponGauge = 100;
+
 
         //Game current state variable
 
@@ -41,11 +45,15 @@ namespace ForcePage
         private void Start()
         {
             _playerInventory = FindObjectOfType<PlayerInventory>();
+            _playerWeapon = GameObject.Find("Player").GetComponent<Weapon>();
         }
 
         void Update()
         {
+            //print(_playerWeapon.currentWeapon);
+            CurrentWeaponGauge();
             PlayerHealthUI();
+            PlayerAmmoUI();
             PlayerInput();
             //print(currentState);
         }
@@ -56,6 +64,37 @@ namespace ForcePage
             healthBar.fillAmount = currentHealth / maxHealth;
         }
 
+        void PlayerAmmoUI()
+        {
+            currentAmmo = _playerInventory.bulletLeft;
+            maxAmmo = _playerInventory.magSize;
+            ammoBar.fillAmount = currentAmmo / maxAmmo;
+        }
+
+        void CurrentWeaponGauge()
+        {
+            gunBar.fillAmount = onGun / maxWeaponGauge;
+            swordBar.fillAmount = onSword / maxWeaponGauge;
+            if(_playerWeapon.currentWeapon == Weapon.Weapons.Gun)
+            {
+                while(onGun < maxWeaponGauge)
+                {
+                    onGun += 2;
+                    onSword -= 2;
+                }
+            }
+            if(_playerWeapon.currentWeapon == Weapon.Weapons.Sword)
+            {
+                //print("Yes!!!!");
+                //onSword = 0;
+                while(onSword < maxWeaponGauge)
+                {
+                    onSword += 2;
+                    onGun -= 2;
+                }
+            }
+
+        }
         void PlayerInput()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -160,9 +199,6 @@ namespace ForcePage
         {
             Application.Quit();
         }
-
-
-        
     }
 
 }

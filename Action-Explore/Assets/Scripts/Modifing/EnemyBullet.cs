@@ -7,8 +7,8 @@ namespace ForcePage
 {
     public class EnemyBullet : Collidable
     {
-        [SerializeField] int damage;
-        [SerializeField] GameObject attacher;
+        [Range(10f, 90f)]
+        [SerializeField] float damage;
 
 
 

@@ -7,7 +7,7 @@ namespace ForcePage
 {
     public struct DealDamage
     {
-        public int damage;
+        public float damage;
     }
 
 }

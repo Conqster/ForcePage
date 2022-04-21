@@ -7,11 +7,11 @@ namespace ForcePage
 {
     public class Damagable : MonoBehaviour
     {
-
+        [Range(0.1f, 2f)]
         [SerializeField] protected float hitColourTime = 0.75f;
         SpriteRenderer sp;
-
-        [SerializeField] protected float health;
+        [Range(5f, 100f)]
+        [SerializeField] protected float health = 20;
 
         
 

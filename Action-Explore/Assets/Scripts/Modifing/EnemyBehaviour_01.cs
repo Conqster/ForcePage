@@ -7,7 +7,7 @@ namespace ForcePage
 {
     enum AIState { Idle, Attacking, Patrol };
     enum AIMoveDirection { Up, Down, Right, Left, Stop}
-    public class EnemyAI : Movement
+    public class EnemyBehaviour_01 : Movement
     {
         // dont need Ref to movement like NPCBehaviour because im already inheariting from movement
         AIState aiState;
@@ -183,12 +183,6 @@ namespace ForcePage
                         case AIMoveDirection.Right:
                             _enemyWeapon.FireShot();
                         break;
-                        case AIMoveDirection.Up:
-                            FireUp();
-                            break;
-                        case AIMoveDirection.Down:
-                            FireDown();
-                            break;
                     }
                     shootTimer = 0f;
                     shootDelay = Random.Range(shootDelayMin, shootDelayMax);
@@ -301,26 +295,6 @@ namespace ForcePage
         void StopMoving()
         {
             MovementInput(Vector2.zero);
-        }
-
-        void FireUp()
-        {
-            _enemyWeapon.FireShot();
-        }
-
-        void FireDown()
-        {
-            _enemyWeapon.FireShot();
-        }
-
-        void FireRight()
-        {
-            _enemyWeapon.FireShot();
-        }
-
-        void FireLeft()
-        {
-            _enemyWeapon.FireShot();
         }
     }
 

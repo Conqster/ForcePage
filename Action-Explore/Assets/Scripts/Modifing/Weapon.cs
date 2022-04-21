@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace ForcePage
 {
-    enum Weapons { Gun, Sword};
+    //enum Weapons { Gun, Sword};
+
     public class Weapon : MonoBehaviour
     {
         [SerializeField] GameObject Bullet; // prefab for bullet 
@@ -18,10 +19,12 @@ namespace ForcePage
         //bool to allow shot 
         [SerializeField] bool allowShot, attack;
         //reload time
-
-        Weapons currentWeapon;
+        public enum Weapons { Gun, Sword };
+        public Weapons currentWeapon;
         PlayerInventory _playerInventory;
-        
+
+        Animator anim;
+        int equipSwordHash, swingHash;
 
         // its going to be good to have a switch case to either shoot or swing melee weapon 
         protected void Start()
@@ -29,6 +32,9 @@ namespace ForcePage
             //ResetShot();
             allowShot = true;
             attackerTran = GetComponent<Transform>();
+            anim = GetComponentInChildren<Animator>();
+            equipSwordHash = Animator.StringToHash("swordIsEquip");
+            swingHash = Animator.StringToHash("swing");
             _playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
             AmmoOnEquip();
         }
@@ -37,16 +43,13 @@ namespace ForcePage
         private void Update()
         {
             bulletLeft = _playerInventory.bulletLeft;
+            //print(currentWeapon);
             CurrentWeapon();
+            AnimEquipSword();
             GetInputs();
             Attack();
         }
 
-        void AmmoOnEquip()
-        {
-            magazineSize = _playerInventory.magSize; // gets the gun ammmo size 
-            _playerInventory.UpdateAmmo(magazineSize); // sets the bulletLeft to gun ammo size
-        }
         void CurrentWeapon()
         {
             if (Input.GetKey(KeyCode.Z))
@@ -58,9 +61,28 @@ namespace ForcePage
                 currentWeapon = Weapons.Sword;
             }
         }
+        void AmmoOnEquip()
+        {
+            magazineSize = _playerInventory.magSize; // gets the gun ammmo size 
+            _playerInventory.UpdateAmmo(magazineSize); // sets the bulletLeft to gun ammo size
+        }
+        void AnimEquipSword()
+        {
+            if(anim != null)
+            {
+                if(currentWeapon == Weapons.Sword)
+                {
+                    anim.SetBool(equipSwordHash, true);
+                }
+                else
+                {
+                    anim.SetBool(equipSwordHash, false);
+                }
+            }
+        }
         void GetInputs()
         {
-            attack = Input.GetKey(KeyCode.Space);
+            attack = Input.GetKeyDown(KeyCode.Space);
         }
 
         void Attack()
@@ -75,13 +97,6 @@ namespace ForcePage
             }
         }
 
-        void Melee()
-        {
-            if(attack)
-            {
-                 print("trying to swing my sword");
-            }
-        }
         void ArmSafetyOff()
         {
             if (allowShot && attack && bulletLeft > 0)
@@ -110,15 +125,27 @@ namespace ForcePage
             _playerInventory.UpdateAmmo(-1);
             Invoke("ResetShot", timeBetweenShooting);
         }
-
-
-        //might change to a bool return method with some bit of logics 
         void ResetShot()
         {
              allowShot = true;
         }
+        void Melee()
+        {
+            if(attack)
+            {
+                Swing();
+                 //print("trying to swing my sword");
+            }
+        }
 
-     
+        void Swing()
+        {
+            if(anim != null)
+            {
+                anim.SetTrigger(swingHash);
+            }
+        }
+
     }
 
 }
